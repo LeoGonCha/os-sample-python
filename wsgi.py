@@ -42,7 +42,7 @@ def JsonHandler():
             #store.hmset(content['name'], {"group": content['path_with_namespace'].split('/')[0]})
             logging.info('Project {0} transferd')
             return "OK"
-        else
+        else:
             logging.info("outra coisa")
     else:
         logging.inf("else")
