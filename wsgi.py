@@ -15,16 +15,15 @@ def hello():
 @application.route('/', methods = ['POST'])
 def JsonHandler():
     if request.is_json:
-        logging.info("ifa")
         content = request.get_json()
-        logging.info("ifd")
+        logging.info(content['event_name'])
         # Handle project changes
         if content['event_name'] == "project_create":
             #pipe = store.pipeline()
             #pipe.hmset(content['name'], {"group": content['owner_name']})
             #pipe.hmset(content['name'], {"branches": map_branches })
             #pipe.execute()
-            logging.info('Project {0} Created.')
+            logging.info('Project {0} Created.' + content['name'])
             return "OK"
         elif content['event_name'] == "push":
             #update_consul_last_push(content)
