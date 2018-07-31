@@ -1,13 +1,13 @@
 from flask import Flask
 from flask import request
  
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/")
+@application.route("/")
 def hello():
     return "Hello World!"
 
-@app.route('/', methods = ['POST'])
+@application.route('/', methods = ['POST'])
 def JsonHandler():
     if request.is_json:
         content = request.get_json()
@@ -38,4 +38,4 @@ def JsonHandler():
         return "JSON Only"
      
 if __name__ == "__main__":
-    app.run()
+    application.run()
