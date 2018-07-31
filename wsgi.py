@@ -44,6 +44,7 @@ def JsonHandler():
             return "OK"
         else:
             logging.info("outra coisa")
+            return "Ok"
     else:
         logging.inf("else")
         return "JSON Only"
