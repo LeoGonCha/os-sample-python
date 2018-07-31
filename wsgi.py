@@ -1,10 +1,14 @@
 from flask import Flask
 from flask import request
- 
+
+import logging
+
 application = Flask(__name__)
 
 @application.route("/")
 def hello():
+    logging.warning('Watch out!')  # will print a message to the console
+    logging.info('I told you so') 
     return "Hello World!"
 
 @application.route('/', methods = ['POST'])
