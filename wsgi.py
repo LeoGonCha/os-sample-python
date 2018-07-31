@@ -15,9 +15,9 @@ def hello():
 @application.route('/', methods = ['POST'])
 def JsonHandler():
     if request.is_json:
-        logging.info("if")
+        logging.info("ifa")
         content = request.get_json()
-        logging.info(content)
+        logging.info("ifd")
         # Handle project changes
         if content['event_name'] == "project_create":
             #pipe = store.pipeline()
@@ -42,9 +42,11 @@ def JsonHandler():
             #store.hmset(content['name'], {"group": content['path_with_namespace'].split('/')[0]})
             logging.info('Project {0} transferd')
             return "OK"
+        else
+            logging.info("outra coisa")
     else:
         logging.inf("else")
         return "JSON Only"
-     
+
 if __name__ == "__main__":
     application.run()
