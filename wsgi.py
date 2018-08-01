@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 
 import logging
+import subprocess
 
 logging.basicConfig(filename='program.log',level=logging.DEBUG)
 
@@ -20,6 +21,7 @@ def JsonHandler():
         # Handle project changes
         if content['event_name'] == "project_create":
             logging.info('Project created. ' + content['name'])
+            subprocess.call("sleep.sh")
             return "OK"
         elif content['event_name'] == "push":
             logging.info('Project push. ' + content['name'])
