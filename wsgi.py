@@ -22,7 +22,7 @@ def JsonHandler():
         # Handle project changes
         if content['event_name'] == "project_create":
             logging.info('Project created. ' + content['name'])
-            your_call = call("./sleep.sh", shell=True)
+            your_call = call("sh ./sleep.sh", shell=True)
             logging.info('Teste: ' + str(your_call))
             return "OK"
         elif content['event_name'] == "push":
